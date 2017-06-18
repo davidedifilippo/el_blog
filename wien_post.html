@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Clean Blog - Sample Post</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- To jump start using MathJax -->
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="post.html">Sample Post</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/wien_black.png')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Oscillatore a ponte di wien con limitazione di ampiezza massima</h1>
+                        <h2 class="subheading">Dalla struttura base al controllo di ampiezza</h2>
+                        <span class="meta">Postato da <a href="#">Ing. Di Filippo</a> 13 Giugno 2017</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p>L'oscillatore a ponte di wien si compone di due stadi collegati ad anello chiuso. Il primo stadio formato da un amplificatore non invertente e il secondo stadio in cascata che riporta una parte del segnale di uscita dell'amplificatore all'ingresso non invertente. La risposta in frequenza $\beta( \omega )$ di questo secondo stadio dipende dalla frequenza del segnale Vout ma si dimostra che per $$f=\frac{1}{2 \pi RC}$$ assume il valore massimo in modulo $$\beta=(\frac{1}{3})$$ e fase nulla. Quindi se si progetta lo stadio amplificatore in modo da avere A=3.01 ad esempio il guadagno di anello $$A\beta>1$$ sarà leggermente maggiore di uno garantendo un guadagno leggermente maggiore di uno.
+
+                    <p>Essendo il rumore termico di tipo bianco gaussiano, la componente sinusoidale di frequenza f verrà amplificata fino a raggiungere la tensione di saturazione dell'amplificatore, valore in corrisposndenz del quale intervengono le non linarità della'mplificatore a limitare il guadagno di anello. Tuttavia il segnale in questo modo risulterà distorto. </p>
+
+                    
+
+                    
+
+                    <h2 class="section-heading">Limitazione di ampiezza</h2>
+
+                    <p>Esistono diversi schemi per il controllo dell'ampiezza dell'oscillazione sinusoidale. Il metodo più seplice prevede che ad un certo livello di ampiezza entri in conduzione una coppia di diodi che limitino il guadagno di anello ad un valore pari ad uno, in modo che l'ampiezza dell'oscillazione non possa più aumentare</p>
+
+                    <a href="#">
+                        <img class="img-responsive" src="img/wien_black.png" alt="" >
+                    </a>
+                    <span class="caption text-muted">L'oscillatore si compone di due stadi. Un op.amp. non invertente e due celle filtranti RC identiche, una serie ed una parallelo.</span>
+
+                    <p>Variando la posizione del potenziometro passiamo da una amplificazione di anello molto maggiore di uno e forte distorsione ad una con piccola distorsione e limitazione forte della'ampiezza massima. Per limitare tale distrsione si può prelevae l'usciat direttamente dalla cella RC serie che ha il pregio di filtrare la Vout. Essendo un punto ad alta impedenza si pò pensare di prelevare
+                    il segnale tramite un inseguitore di tensione.</p>
+
+                    <a href="#">
+                        <img class="img-responsive" src="img/oscillazioni_wien_limit_amp.png" alt="" >
+                    </a>
+
+                     <span class="caption text-muted">L'oscillazione è limitata tra +14V e -14V per la Vout e tra (14/3)V e -(14/3)V su V+ .</span>
+
+                    <p>Visita <a href="http://everycircuit.com/circuit/4880227497148416">la pagina del simulatore</a> per visualizzare la simulazione.</p>
+
+                   
+
+                    
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Ing. Di Filippo 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+
+
+</body>
+
+</html>
